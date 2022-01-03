@@ -46,3 +46,26 @@ body{
   transform: translate(-50%, -50%);
   border-radius: 50%;
 }
+
+.score {
+  display: flex;
+  justify-content: center;
+  color: var(--foreground-color);
+  font-weight: bold;
+  font-size: 7vh;
+}
+
+.score > * {
+  /* both child takes same proportion of screen */
+  flex-grow: 1;
+  flex-basis: 0;
+  padding: 0 2vh;
+  margin: 1vh 0;
+  opacity: .5;
+}
+
+
+.score > :first-child{
+  text-align: right;
+  border-right: .5vh solid var(--foreground-color);
+}
