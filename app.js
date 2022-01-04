@@ -41,6 +41,62 @@ function handleLose() {
   }
   ball.reset();
   computerPaddle.reset();
+
+  const playerScore = parseInt(playerScoreElem.textContent);
+  const computerScore = parseInt(computerScoreElem.textContent);
+
+  if(playerScore >= 10 || computerScore >= 10 ) {
+    const body = document.querySelector("body");
+    const foreground = getComputedStyle(document.documentElement).getPropertyValue("--foreground-color");
+    const background = getComputedStyle(document.documentElement).getPropertyValue("--background-color");
+    body.style.setProperty("color", foreground)
+    body.style.setProperty("width", "100vw");
+    body.style.setProperty("height", "100vh");
+    body.style.setProperty("font-size", "2rem");
+    body.style.setProperty("font-weight", "bold");
+    body.style.setProperty("display", "flex");
+    body.style.setProperty("flex-direction", "column");
+    body.style.setProperty("justify-content", "center");
+    body.style.setProperty("align-items", "center");
+    if(playerScore >= 10){
+      body.innerHTML = `CONGRATS! You Won ! 
+      <button
+      style="color: ${background}; 
+      background-color: ${foreground}; 
+      font-weight: bold;
+      outline: none;
+      border: none;
+      padding: 5px;
+      font-size: 14px;
+      ">Restart</button>`;
+      const btn = document.querySelector("button");
+      btn.onclick = () => {
+        window.location.reload();
+      };
+      // alert("Congrats! You Won!");
+      // window.location.reload();
+    }
+
+    if(computerScore >= 10) {
+      body.innerHTML = `OOPS! You lose! 
+      <button
+      style="color: ${background}; 
+      background-color: ${foreground}; 
+      font-weight: bold;
+      outline: none;
+      border: none;
+      padding: 5px;
+      font-size: 14px;
+      ">Restart</button>`;
+      const btn = document.querySelector("button");
+      btn.onclick = () => {
+        window.location.reload();
+      };
+      // alert("Ooops! You lose!")
+      // window.location.reload();
+
+    }
+  }
 };
 
 document.addEventListener("mousemove", e => {
