@@ -1,4 +1,4 @@
-# pong-clone
+# PONG clone
 Pong game clone using Vanilla JS
 
 You can try this site in your browser by visiting the url mentioned below:
