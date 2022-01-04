@@ -48,4 +48,12 @@ document.addEventListener("mousemove", e => {
 
 });
 
+document.addEventListener("touchmove", e => {
+  playerPaddle.position = (e.touches[0].clientY / window.innerHeight) * 100; //e.y is the position in pixels so converted %
+  // console.log(53, e)
+  // console.log(54, e.touches)
+  // console.log(54, e.touches[0].clientY)
+
+});
+
 window.requestAnimationFrame(update);
